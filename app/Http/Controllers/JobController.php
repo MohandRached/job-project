@@ -20,6 +20,6 @@ class JobController extends Controller
         $response = Http::acceptJson()->get("{$this->apiBase}/api/jobs");
         $jobs = is_array($response->json()) ? $response->json() : [];
         $job = collect($jobs)->firstWhere('id', $id);
-        return view('jobs.show', compact('job'));
+        return view('jobs.git push -u origin mainshow', compact('job'));
     }
 }
