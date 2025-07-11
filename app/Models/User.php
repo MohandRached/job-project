@@ -45,4 +45,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function favoriteJobs()
+    {
+        return $this->belongsToMany(Job::class, 'favorites');
+    }
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
+
 }
